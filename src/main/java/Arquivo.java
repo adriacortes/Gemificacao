@@ -76,12 +76,28 @@ public class Arquivo {
             pegandoDadosSeparadosLinha = linhaArquivo.split(";");
 
             if (pegandoDadosSeparadosLinha[0].equals(nome)){
-                usuario = Usuario.criaApartirDeUm(pegandoDadosSeparadosLinha,tipoPonto);
+                usuario = Usuario.criarUsuariAPartirDeUmRegistroDoArquivo(pegandoDadosSeparadosLinha,tipoPonto);
                 return usuario;
             }
 
         }
 
         return usuario;
+    }
+
+    public List<Usuario> retonarUsuariosComPontuacao() throws IOException {
+
+        String linhaArquivo;
+        String[] pegandoDadosSeparadosLinha ;
+        Usuario usuario ;
+        var usuarios = new ArrayList<Usuario>();
+
+        while ((linhaArquivo = lerLinhaArquivo.readLine()) != null) {
+            pegandoDadosSeparadosLinha = linhaArquivo.split(";");
+                usuario = Usuario.criarUsuariAPartirDeUmRegistroDoArquivo(pegandoDadosSeparadosLinha);
+                usuarios.add(usuario);
+        }
+
+        return usuarios;
     }
 }

@@ -3,7 +3,7 @@ package org.adria;
 public enum TipoPonto {
 
     ESTRELA("estrela"),
-    MOEDA("MOEDA"),
+    MOEDA("Moeda"),
 
     TOPICO("topico"),
     COMENTARIO("comentario"),

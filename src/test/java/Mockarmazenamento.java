@@ -3,6 +3,7 @@ import org.adria.TipoPonto;
 import org.adria.Usuario;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Mockarmazenamento implements Armazenamento {
 
@@ -28,6 +29,14 @@ public class Mockarmazenamento implements Armazenamento {
     public Usuario buscarPontosDeUsuarioPorTipoPonto(String nome, TipoPonto tipoPontoo) throws IOException {
         return arquivo.buscarPontosDoUsuarioPorTipo(nome,tipoPontoo);
     }
+
+
+    @Override
+    public List<Usuario> dadosDosUsuarios() throws IOException {
+        return arquivo.retonarUsuariosComPontuacao();
+    }
+
+
 
 
 }

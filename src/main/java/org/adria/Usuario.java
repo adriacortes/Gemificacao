@@ -21,7 +21,7 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public static Usuario criaApartirDeUm(String[] registroDePontos,TipoPonto tipoPonto)
+    public static Usuario criarUsuariAPartirDeUmRegistroDoArquivo(String[] registroDePontos, TipoPonto tipoPonto)
     {
         Usuario usuario = new Usuario();
         usuario.setNome(registroDePontos[0]);
@@ -40,6 +40,32 @@ public class Usuario {
         this.nome = nome;
         this.pontuacao = pontuacao;
         this.tipoPonto = tipoPonto;
+    }
+
+    public static Usuario criarUsuariAPartirDeUmRegistroDoArquivo(String[] registroDePontos) {
+        Usuario usuario = new Usuario();
+        usuario.setNome(registroDePontos[0]);
+
+
+        for (int i = 1; i < registroDePontos.length; i+=2)
+        {
+            if(registroDePontos[i].equalsIgnoreCase(TipoPonto.MOEDA.getDescricao())){
+                usuario.gravaPontosNoMap(TipoPonto.MOEDA,Integer.parseInt(registroDePontos[i+1]));
+            }
+            if(registroDePontos[i].equalsIgnoreCase(TipoPonto.ESTRELA.getDescricao())){
+                usuario.gravaPontosNoMap(TipoPonto.ESTRELA,Integer.parseInt(registroDePontos[i+1]));
+            }
+            if(registroDePontos[i].equalsIgnoreCase(TipoPonto.COMENTARIO.getDescricao())){
+                usuario.gravaPontosNoMap(TipoPonto.COMENTARIO,Integer.parseInt(registroDePontos[i+1]));
+            }
+            if(registroDePontos[i].equalsIgnoreCase(TipoPonto.TOPICO.getDescricao())){
+                usuario.gravaPontosNoMap(TipoPonto.TOPICO,Integer.parseInt(registroDePontos[i+1]));
+            }
+            if(registroDePontos[i].equalsIgnoreCase(TipoPonto.CURTIDA.getDescricao())){
+                usuario.gravaPontosNoMap(TipoPonto.CURTIDA,Integer.parseInt(registroDePontos[i+1]));
+            }
+        }
+        return usuario;
     }
 
     public String getNome() {

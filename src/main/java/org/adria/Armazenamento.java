@@ -1,13 +1,17 @@
 package org.adria;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface Armazenamento {
 
 
-    public String salvarPontosDoUsuario(Usuario usuario);
-    public String buscarPontosPorUsuario(String nome) throws IOException;
+     String salvarPontosDoUsuario(Usuario usuario);
+     String buscarPontosPorUsuario(String nome) throws IOException;
 
-    public Usuario buscarPontosDeUsuarioPorTipoPonto(String nome,TipoPonto tipoPontoo) throws IOException;
+     Usuario buscarPontosDeUsuarioPorTipoPonto(String nome,TipoPonto tipoPontoo) throws IOException;
+
+     List<Usuario> dadosDosUsuarios() throws IOException;
+
 
 }
