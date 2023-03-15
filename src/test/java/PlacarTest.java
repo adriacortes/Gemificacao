@@ -3,7 +3,9 @@ import org.adria.TipoPonto;
 import org.adria.Usuario;
 import org.junit.Test;
 
+import javax.sound.midi.Soundbank;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -12,24 +14,33 @@ import static org.junit.Assert.assertEquals;
 public class PlacarTest {
 
 
+    public List<Usuario> inicializandoListaComDadosUsuario() throws IOException {
+        List<Usuario> listUsuarios = new ArrayList<>();
+
+        Mockarmazenamento armazenamento = new Mockarmazenamento();
+        Placar placar = new Placar(armazenamento);
+
+        return  listUsuarios = placar.dadosDosUsuarios();
+    }
+
     /**
      *  Pontua dados para usuario gravando em arquivo
      * Por exemplo: o usuário "guerra" recebeu "10" pontos do tipo "estrela"
      * */
     @Test
     public void deverRetornarGravadoComSucessoAoSalvarPontosDoUsuarioEmArquivo() throws IOException {
-        Mockarmazenamento armazenamento = new Mockarmazenamento();
 
+        Mockarmazenamento armazenamento = new Mockarmazenamento();
         TipoPonto pontoMoeda = TipoPonto.MOEDA;
         TipoPonto pontoEstrela = TipoPonto.ESTRELA;
         TipoPonto pontoComentario = TipoPonto.COMENTARIO;
-
         Usuario usuario = new Usuario("Lucas");
+        Placar placar = new Placar(armazenamento);
+
         usuario.gravaPontosNoMap(pontoMoeda,25);
         usuario.gravaPontosNoMap(pontoEstrela,05);
         usuario.gravaPontosNoMap(pontoComentario,05);
 
-        Placar placar = new Placar(armazenamento);
 
         String msg = placar.salvarPontosDoUsuario(usuario);
 
@@ -44,36 +55,43 @@ public class PlacarTest {
     public void pegaRegistroDePontosDoArquivoESetaNoObjetoRetornandoUmaListaDeUsuariosESeusPontos() throws IOException {
         Arquivo arq = new Arquivo();
         List<Usuario> usuarios = arq.retonarUsuariosComPontuacao();
+        boolean encontrouDados = true;
+        if (usuarios.isEmpty()){
+            encontrouDados=false;
+        }
+        TipoPonto pontoMoeda = TipoPonto.MOEDA;
+        TipoPonto pontoEstrela= TipoPonto.ESTRELA;
+        TipoPonto pontoComentario = TipoPonto.COMENTARIO;
+
         for (Usuario us:usuarios) {
             System.out.printf("\n"+us.getNome());
             Map<Enum, Integer> enumIntegerMap = us.retornaMapComPontos();
             for (Enum tipoEnum: enumIntegerMap.keySet()) {
                 System.out.printf("\n"+tipoEnum+":"+enumIntegerMap.get(tipoEnum));
             }
-
         }
 
-        assertEquals(1,0);
+        assertEquals(true,encontrouDados);
 
     }
 
-
-
     /**
-     * Recuperar quantos pontos de um tipo tem um usuário.
+     * Recuperar quantos pontos de um TIPO X tem um USUARIO X.
      * Por exemplo: retornar quantos pontos do tipo "estrela" tem o usuário "guerra"
      */
     @Test
-    public void quantosPontosMoedaTemUsuarioLianaDeveRetornar20() throws IOException {
+    public void deveRetornar20PontosDoTipoMoedaParaUsuarioLiana() throws IOException {
 
-        Mockarmazenamento armazenamento = new Mockarmazenamento();
-        Placar placar = new Placar(armazenamento);
-        Usuario usuario ;
+        TipoPonto tipoMoeda = TipoPonto.MOEDA;
+        int ponto=0;
+        String nomeBuscado = "Liana";
 
-        TipoPonto pontoMoeda = TipoPonto.MOEDA;
+        List<Usuario> usuarios = inicializandoListaComDadosUsuario();
+        for (Usuario us: usuarios) {
+            if (us.getNome().equalsIgnoreCase(nomeBuscado))
+                ponto = us.retornaMapComPontos().get(tipoMoeda);
+        }
 
-        usuario  = placar.buscarPontosPorTipo("Liana",pontoMoeda);
-        int ponto = usuario.retornaMapComPontos().get(pontoMoeda);
         assertEquals(20,ponto);
     }
 
@@ -82,7 +100,7 @@ public class PlacarTest {
      * Retornar ranking de um tipo de ponto
      */
     @Test
-    public void rankintPorTipoPontuacao() throws IOException
+    public void rankingtPorTipoPontuacao() throws IOException
     {
 
         Mockarmazenamento armazenamento = new Mockarmazenamento();

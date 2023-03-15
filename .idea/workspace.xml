@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="52a2c858-bc4b-4644-b9e4-5fc8bf421221" name="Changes" comment="Implementando teste :&#10;public void quantosPontosMoedaTemUsuarioLianaDeveRetornar20()&#10;Esta funcionando!">
+    <list default="true" id="52a2c858-bc4b-4644-b9e4-5fc8bf421221" name="Changes" comment="1.Teste Retornar Ranking por tipo de ponto funcionanda.&#10;&#10;2.Pengando dados do arquivo e colocando em um List de usuarios.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Arquivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Arquivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/adria/Armazenamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/adria/Armazenamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/adria/Placar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/adria/Placar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/adria/TipoPonto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/adria/TipoPonto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/adria/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/adria/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Mockarmazenamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Mockarmazenamento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/PlacarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PlacarTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +57,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PlacarTest.rankintPorTipoPontuacao">
+  <component name="RunManager" selected="JUnit.PlacarTest.pegaRegistroDePontosDoArquivoESetaNoObjetoRetornandoUmaListaDeUsuariosESeusPontos">
     <configuration name="PlacarTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GamificacaoTddV2" />
       <option name="PACKAGE_NAME" value="" />
@@ -72,11 +67,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlacarTest.lerDadosDoArquivoESetarNoObjetoPorTipoPonto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlacarTest.deveRetornar20PontosDoTipoMoedaParaUsuarioLiana" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GamificacaoTddV2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlacarTest" />
-      <option name="METHOD_NAME" value="lerDadosDoArquivoESetarNoObjetoPorTipoPonto" />
+      <option name="METHOD_NAME" value="deveRetornar20PontosDoTipoMoedaParaUsuarioLiana" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlacarTest.deveRetornar20PontosDoTipoMoedaParaUsuaroLiana" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="GamificacaoTddV2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PlacarTest" />
+      <option name="METHOD_NAME" value="deveRetornar20PontosDoTipoMoedaParaUsuaroLiana" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,21 +97,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlacarTest.rankintPorTipoPontuacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlacarTest.rankingtPorTipoPontuacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GamificacaoTddV2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlacarTest" />
-      <option name="METHOD_NAME" value="rankintPorTipoPontuacao" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlacarTest.retornarTodosUsuariosComPontuacao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GamificacaoTddV2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlacarTest" />
-      <option name="METHOD_NAME" value="retornarTodosUsuariosComPontuacao" />
+      <option name="METHOD_NAME" value="rankingtPorTipoPontuacao" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,11 +109,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PlacarTest.rankintPorTipoPontuacao" />
-        <item itemvalue="JUnit.PlacarTest" />
         <item itemvalue="JUnit.PlacarTest.pegaRegistroDePontosDoArquivoESetaNoObjetoRetornandoUmaListaDeUsuariosESeusPontos" />
-        <item itemvalue="JUnit.PlacarTest.retornarTodosUsuariosComPontuacao" />
-        <item itemvalue="JUnit.PlacarTest.lerDadosDoArquivoESetarNoObjetoPorTipoPonto" />
+        <item itemvalue="JUnit.PlacarTest" />
+        <item itemvalue="JUnit.PlacarTest.rankingtPorTipoPontuacao" />
+        <item itemvalue="JUnit.PlacarTest.deveRetornar20PontosDoTipoMoedaParaUsuarioLiana" />
+        <item itemvalue="JUnit.PlacarTest.deveRetornar20PontosDoTipoMoedaParaUsuaroLiana" />
       </list>
     </recent_temporary>
   </component>
@@ -138,11 +133,19 @@
       <option name="project" value="LOCAL" />
       <updated>1678741744571</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1.Teste Retornar Ranking por tipo de ponto funcionanda.&#10;&#10;2.Pengando dados do arquivo e colocando em um List de usuarios.">
+      <created>1678904847820</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678904847820</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implementando teste :&#10;public void quantosPontosMoedaTemUsuarioLianaDeveRetornar20()&#10;Esta funcionando!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementando teste :&#10;public void quantosPontosMoedaTemUsuarioLianaDeveRetornar20()&#10;Esta funcionando!" />
+    <MESSAGE value="1.Teste Retornar Ranking por tipo de ponto funcionanda.&#10;&#10;2.Pengando dados do arquivo e colocando em um List de usuarios." />
+    <option name="LAST_COMMIT_MESSAGE" value="1.Teste Retornar Ranking por tipo de ponto funcionanda.&#10;&#10;2.Pengando dados do arquivo e colocando em um List de usuarios." />
   </component>
 </project>

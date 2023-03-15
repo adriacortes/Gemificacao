@@ -28,6 +28,11 @@ public class Placar {
         return armazenamento.buscarPontosDeUsuarioPorTipoPonto(liana,tipoPonto);
     }
 
+    public List<Usuario> dadosDosUsuarios() throws IOException {
+        List<Usuario> usuarios = armazenamento.dadosDosUsuarios();
+        return usuarios;
+    }
+
     public List<Usuario> rankingPorPontuacao(TipoPonto pontoMoeda) throws IOException {
 
         List<Usuario> listTodosOsPontosDoUsuario = armazenamento.dadosDosUsuarios();
