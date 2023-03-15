@@ -70,9 +70,7 @@ public class PlacarTest {
                 System.out.printf("\n"+tipoEnum+":"+enumIntegerMap.get(tipoEnum));
             }
         }
-
         assertEquals(true,encontrouDados);
-
     }
 
     /**
